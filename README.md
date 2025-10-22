@@ -11,6 +11,7 @@
 - 重写了Http请求的发送方法，比如Send/Get/Post/Put/Delete/GetBytesArray.当`IsVpnEnabled`为true且Logined为true时，请求均使用web vpn发送，同时自动改写Url。如果Logined为False,则报错弹出。登录失败返回“400：{错误信息}”。
 
 - 对于特殊的协议，此脚本可能不适用，需要手动修改一部分源码。
+
 **使用样例**
 
 ```csharp
