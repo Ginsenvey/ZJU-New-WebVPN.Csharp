@@ -8,7 +8,7 @@
 
 - 公开了属性`IsVpnEnabled`;`client`;`Logined`;`Ticket`;`AutoDirect`,Ticket是鉴权的必要Cookie.当没有登录成功时，Ticket返回空Cookie对象。
 
-- 重写了Http请求的发送方法，比如Send/Get/Post/Put/Delete/GetBytesArray.当`IsVpnEnabled`为true且Logined为true时，请求均使用web vpn发送，同时自动改写Url。如果Logined为False,则报错弹出。登录失败返回“404：{错误信息}”。
+- 重写了Http请求的发送方法，比如Send/Get/Post/Put/Delete/GetBytesArray.当`IsVpnEnabled`为true且Logined为true时，请求均使用web vpn发送，同时自动改写Url。如果Logined为False,则报错弹出。凭据错误返回“0”,登录出错返回“404：{错误信息}”。
 
 - 对于特殊的协议，此脚本可能不适用，需要手动修改一部分源码。如果已触发验证码，请先正常登录一次，消除验证码。
 
