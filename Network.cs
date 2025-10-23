@@ -56,6 +56,7 @@ public class VpnService:IDisposable
             };
                 var content = new FormUrlEncodedContent(formData);
                 var login_res = await client.PostAsync(LoginPswUrl, content);
+                if(login_res.StatusCode != HttpStatusCode.OK)return "404:登录请求失败";
                 string text = await login_res.Content.ReadAsStringAsync();
                 if (ParseLoginResult(text))
                 {
@@ -320,5 +321,6 @@ public class VpnService:IDisposable
         }
     }
 }
+
 
 
