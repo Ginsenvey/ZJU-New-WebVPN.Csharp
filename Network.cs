@@ -56,8 +56,6 @@ public class VpnService:IDisposable
             };
                 var content = new FormUrlEncodedContent(formData);
                 var login_res = await client.PostAsync(LoginPswUrl, content);
-                Console.WriteLine(login_res.StatusCode);
-                Console.WriteLine();
                 string text = await login_res.Content.ReadAsStringAsync();
                 if (ParseLoginResult(text))
                 {
@@ -322,4 +320,5 @@ public class VpnService:IDisposable
         }
     }
 }
+
 
